@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800;
+    @apply text-gray-900 dark:text-gray-100;
+    @apply transition-colors duration-300;
+  }
+  
+  * {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  /* Celebrity Card Styles */
+  .celebrity-card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-celebrity hover:shadow-celebrity-hover;
+    @apply transform transition-all duration-300 hover:scale-105;
+    @apply border border-gray-200 dark:border-gray-700;
+    @apply cursor-pointer overflow-hidden;
+  }
+  
+  .celebrity-card.selected {
+    @apply ring-4 ring-primary-500 ring-opacity-50;
+    @apply border-primary-500;
+  }
+  
+  .celebrity-card:hover {
+    @apply border-primary-400 dark:border-primary-600;
+  }
+  
+  /* Audio Controls */
+  .audio-control-btn {
+    @apply bg-primary-500 hover:bg-primary-600 text-white;
+    @apply px-6 py-3 rounded-xl font-medium;
+    @apply transition-all duration-200 transform hover:scale-105;
+    @apply shadow-lg hover:shadow-xl;
+    @apply flex items-center gap-2;
+  }
+  
+  .audio-control-btn:disabled {
+    @apply bg-gray-400 cursor-not-allowed transform-none;
+  }
+  
+  .audio-control-btn.secondary {
+    @apply bg-secondary-500 hover:bg-secondary-600;
+  }
+  
+  .audio-control-btn.danger {
+    @apply bg-error-500 hover:bg-error-600;
+  }
+  
+  /* Category Tabs */
+  .category-tab {
+    @apply px-6 py-3 rounded-xl font-medium transition-all duration-200;
+    @apply border-2 border-transparent;
+  }
+  
+  .category-tab.active {
+    @apply bg-primary-500 text-white border-primary-500;
+    @apply shadow-lg;
+  }
+  
+  .category-tab:not(.active) {
+    @apply bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300;
+    @apply hover:bg-gray-300 dark:hover:bg-gray-600;
+  }
+  
+  /* Audio Waveform Container */
+  .waveform-container {
+    @apply bg-white dark:bg-gray-800 rounded-xl p-4;
+    @apply border-2 border-dashed border-gray-300 dark:border-gray-600;
+    @apply transition-colors duration-200;
+  }
+  
+  .waveform-container.recording {
+    @apply border-error-500 bg-error-50 dark:bg-error-900/20;
+  }
+  
+  /* Loading Spinner */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-4 border-gray-200;
+    @apply border-t-primary-500;
+  }
+  
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary-500 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-600;
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500;
+    @apply bg-clip-text text-transparent;
+  }
+  
+  /* Glass Effect */
+  .glass-effect {
+    @apply bg-white/10 dark:bg-gray-900/10;
+    @apply backdrop-blur-md border border-white/20;
+  }
+  
+  /* Celebrity Category Gradients */
+  .bollywood-gradient {
+    @apply bg-gradient-to-r from-warning-400 to-warning-600;
+  }
+  
+  .tollywood-gradient {
+    @apply bg-gradient-to-r from-secondary-400 to-secondary-600;
+  }
+  
+  .kollywood-gradient {
+    @apply bg-gradient-to-r from-accent-400 to-accent-600;
+  }
+  
+  .regional-gradient {
+    @apply bg-gradient-to-r from-success-400 to-success-600;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  /* Text utilities */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive text sizes */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl;
+  }
+  
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl;
+  }
+}
+
+/* Custom animations for React Mic */
+.sound-wave {
+  @apply rounded-xl overflow-hidden;
+  @apply border-4 border-primary-500;
+}
+
+/* Audio element styling */
+audio {
+  @apply w-full rounded-lg;
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+audio::-webkit-media-controls-panel {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+/* File upload dropzone */
+.dropzone {
+  @apply border-2 border-dashed border-gray-300 dark:border-gray-600;
+  @apply rounded-xl p-8 text-center;
+  @apply transition-colors duration-200;
+  @apply cursor-pointer;
+}
+
+.dropzone.active {
+  @apply border-primary-500 bg-primary-50 dark:bg-primary-900/20;
+}
+
+.dropzone:hover {
+  @apply border-primary-400 bg-primary-50 dark:bg-primary-900/10;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black bg-opacity-50;
+  @apply flex items-center justify-center p-4;
+  @apply z-50;
+}
+
+/* Celebrity profile modal */
+.celebrity-modal {
+  @apply bg-white dark:bg-gray-800 rounded-2xl;
+  @apply max-w-2xl w-full max-h-[90vh] overflow-y-auto;
+  @apply shadow-2xl;
+  @apply animate-slide-up;
+}
+
+/* Responsive grid for celebrity cards */
+.celebrity-grid {
+  @apply grid gap-6;
+  @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+/* Audio comparison slider */
+.comparison-slider {
+  @apply relative overflow-hidden rounded-xl;
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+.comparison-handle {
+  @apply absolute top-0 bottom-0 w-1 bg-primary-500;
+  @apply cursor-ew-resize z-10;
+  @apply shadow-lg;
+}
+
+.comparison-handle::before {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  @apply w-6 h-6 bg-primary-500 rounded-full;
+  @apply flex items-center justify-center;
+  @apply shadow-lg;
+  content: '';
+}
