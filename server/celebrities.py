@@ -34,7 +34,7 @@ CELEBRITIES_DATABASE = {
         {
             "id": "aamir_khan",
             "name": "Aamir Khan",
-            "image": "/images/celebrities/aamir_khan.jpg",
+            "image": "https://i2.cinestaan.com/image-bank/1500-1500/126001-127000/126991.jpg",
             "bio": "Known as 'Mr. Perfectionist', Aamir Khan is renowned for his versatile acting and distinctive voice that adapts to various characters with remarkable precision.",
             "voice_sample": "/samples/aamir_khan_sample.mp3",
             "languages": ["hindi", "english"],
@@ -47,7 +47,7 @@ CELEBRITIES_DATABASE = {
         {
             "id": "salman_khan",
             "name": "Salman Khan",
-            "image": "/images/celebrities/salman_khan.jpg",
+            "image": "https://i2.cinestaan.com/image-bank/1500-1500/124001-125000/124850.jpg",
             "bio": "The 'Bhai' of Bollywood, known for his energetic performances and distinctive voice that resonates with millions of fans across the country.",
             "voice_sample": "/samples/salman_khan_sample.mp3",
             "languages": ["hindi", "english"],
